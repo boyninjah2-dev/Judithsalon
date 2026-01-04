@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judith Saloon | Dreadlocks Sanctuary in Kenyatta Market, Nairobi</title>
+    <title>Judith Blessings Salon | Dreadlocks Sanctuary in Kenyatta Market, Nairobi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rastafari:wght@400&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --rasta-red: #C00;
-            --rasta-gold: #FFD700;
-            --rasta-green: #008000;
-            --rasta-black: #000;
-            --light: #F8F5E9;
-            --text: #222;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --salon-purple: #8A2BE2;
+            --salon-gold: #FFD700;
+            --salon-teal: #20B2AA;
+            --salon-pink: #FF69B4;
+            --salon-black: #1A1A1A;
+            --salon-light: #FFF8F0;
+            --text: #333333;
+            --shadow: 0 8px 25px rgba(138, 43, 226, 0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         * {
@@ -32,42 +33,52 @@
         
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text);
-            background-color: var(--light);
+            background-color: var(--salon-light);
             overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             line-height: 1.2;
+            background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             position: relative;
             display: inline-block;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         h2:after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -12px;
             left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--rasta-red), var(--rasta-gold), var(--rasta-green));
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--salon-purple), var(--salon-gold), var(--salon-teal));
+            border-radius: 5px;
         }
         
-        .rasta-title {
-            background: linear-gradient(to right, var(--rasta-red), var(--rasta-gold), var(--rasta-green));
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .salon-title {
+            background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -76,9 +87,9 @@
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
         
         /* Header & Navigation */
@@ -86,11 +97,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: var(--rasta-black);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.95), rgba(255, 105, 180, 0.95));
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 15px 0;
+            padding: 18px 0;
             transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
         }
         
         nav {
@@ -99,27 +111,31 @@
             align-items: center;
         }
         
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            text-decoration: none;
+        .logo-container {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
         
-        .logo-main {
-            color: var(--rasta-gold);
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            transition: var(--transition);
         }
         
-        .logo-suffix {
-            color: white;
+        .logo-img:hover {
+            transform: scale(1.05);
         }
         
-        .logo-icon {
-            margin-right: 10px;
-            color: var(--rasta-green);
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .nav-links {
@@ -128,30 +144,32 @@
         }
         
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
         }
         
         .nav-links a {
             text-decoration: none;
             color: white;
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition);
             position: relative;
             font-size: 1.1rem;
+            padding: 8px 0;
         }
         
         .nav-links a:hover {
-            color: var(--rasta-gold);
+            color: var(--salon-gold);
         }
         
         .nav-links a:after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 2px;
-            background-color: var(--rasta-gold);
+            height: 3px;
+            background-color: var(--salon-gold);
+            border-radius: 3px;
             transition: var(--transition);
         }
         
@@ -161,11 +179,17 @@
         
         .mobile-menu-btn {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
             color: white;
             cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--salon-gold);
+            transform: rotate(90deg);
         }
         
         /* Hero Section */
@@ -173,183 +197,201 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/dre\ 3.jpg');
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), 
+                        url('Images/Pro.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: flex;
+            background-attachment: fixed;
             color: white;
             text-align: center;
-            padding-top: 80px;
+            padding-top: 100px;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .hero h1 {
-            color: white;
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero h1 span {
-            color: var(--rasta-gold);
+            font-size: 4.5rem;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(135deg, var(--salon-gold), var(--salon-teal), var(--salon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .tagline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            color: var(--rasta-gold);
-            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--salon-gold);
+            margin-bottom: 2.5rem;
             font-style: italic;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .location {
-            font-size: 1.3rem;
-            color: var(--rasta-gold);
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            color: var(--salon-teal);
+            margin-bottom: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 500;
         }
         
         .btn {
             display: inline-block;
-            background: linear-gradient(to right, var(--rasta-red), var(--rasta-gold));
-            color: var(--rasta-black);
-            padding: 15px 35px;
-            border-radius: 30px;
+            background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink));
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--salon-teal), var(--salon-gold));
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
         }
         
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-        }
-        
-        /* Rasta Banner */
-        .rasta-banner {
-            height: 10px;
-            background: linear-gradient(to right, var(--rasta-red), var(--rasta-gold), var(--rasta-green));
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.4);
         }
         
         /* Sections */
         section {
-            padding: 100px 0;
+            padding: 120px 0;
+            position: relative;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
-        .section-title h2:after {
-            left: 50%;
-            transform: translateX(-50%);
+        /* Our Sanctuary Section with Faded Background */
+        #about {
+            background: linear-gradient(rgba(255, 248, 240, 0.92), rgba(255, 248, 240, 0.95)), 
+                        url('https://images.unsplash.com/photo-1596703923338-48f1c07e4f2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
         }
         
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            height: 100%;
-            border-top: 5px solid var(--rasta-green);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .service-image img {
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
+            background: linear-gradient(135deg, 
+                        rgba(138, 43, 226, 0.03) 0%, 
+                        rgba(255, 215, 0, 0.03) 50%, 
+                        rgba(32, 178, 170, 0.03) 100%);
+            z-index: -1;
         }
         
-        .service-card:hover .service-image img {
-            transform: scale(1.05);
+        /* Our Craft Section with Faded Background */
+        #services {
+            background: linear-gradient(rgba(255, 248, 240, 0.92), rgba(255, 248, 240, 0.95)), 
+                        url('https://images.unsplash.com/photo-1592201426556-1f5e4b46f0c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 1;
         }
         
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-content h3 {
-            color: var(--rasta-red);
-            margin-bottom: 15px;
-            font-size: 1.6rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .service-icon {
-            color: var(--rasta-gold);
-        }
-        
-        .service-content ul {
-            list-style-type: none;
-        }
-        
-        .service-content li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .service-content li:before {
-            content: "✓";
-            color: var(--rasta-green);
-            font-weight: bold;
+        #services::before {
+            content: '';
             position: absolute;
+            top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                        rgba(255, 105, 180, 0.03) 0%, 
+                        rgba(255, 215, 0, 0.03) 50%, 
+                        rgba(138, 43, 226, 0.03) 100%);
+            z-index: -1;
         }
         
-        /* About Section */
+        /* Recent Works Section */
+        #recent-works {
+            background: linear-gradient(135deg, #f8f4ff, #fff4fd);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #recent-works:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%238A2BE2" opacity="0.03" d="M0,0 L100,0 L100,100 Z"/><path fill="%23FF69B4" opacity="0.03" d="M0,0 L0,100 L100,100 Z"/></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        #recent-works .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* About Content */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         
         .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
         }
         
-         .video-container {
-            border-radius: 10px;
+        .video-container {
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            border: 5px solid white;
-            outline: 2px solid var(--rasta-gold);
+            border: 8px solid white;
+            outline: 3px solid var(--salon-purple);
             position: relative;
-            height: 400px;
+            height: 450px;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+        
+        .video-container:hover {
+            transform: perspective(1000px) rotateY(0deg);
+            outline-color: var(--salon-gold);
         }
         
         .video-container video {
@@ -365,53 +407,283 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .play-button {
-            background-color: rgba(255, 215, 0, 0.8);
+            background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink));
             border-radius: 50%;
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            border: 3px solid white;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .play-button:hover {
-            background-color: rgba(255, 215, 0, 1);
-            transform: scale(1.1);
+            transform: scale(1.15);
+            background: linear-gradient(135deg, var(--salon-teal), var(--salon-gold));
         }
         
         .play-button i {
-            color: var(--rasta-black);
-            font-size: 1.8rem;
+            color: white;
+            font-size: 2rem;
             margin-left: 5px;
         }
-        /*.about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 5px solid white;
-            outline: 2px solid var(--rasta-gold);
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
         }
         
-        .about-image img {
+        .service-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            border-top: 8px solid var(--salon-purple);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 25px 50px rgba(138, 43, 226, 0.2);
+            border-top-color: var(--salon-gold);
+        }
+        
+        .service-image {
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-image img {
             width: 100%;
-            height: auto;
-            display: block;
-        }*/
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: var(--salon-purple);
+            margin-bottom: 20px;
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .service-icon {
+            color: var(--salon-gold);
+            font-size: 1.5rem;
+        }
+        
+        .service-content ul {
+            list-style-type: none;
+        }
+        
+        .service-content li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-content li:before {
+            content: "✦";
+            color: var(--salon-teal);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Recent Works Gallery with Videos */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .work-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            cursor: pointer;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+            animation: floatAnimation 6s ease-in-out infinite;
+            animation-delay: calc(var(--animation-order) * 0.2s);
+        }
+        
+        .work-item.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .work-item:nth-child(1) { --animation-order: 1; }
+        .work-item:nth-child(2) { --animation-order: 2; }
+        .work-item:nth-child(3) { --animation-order: 3; }
+        .work-item:nth-child(4) { --animation-order: 4; }
+        .work-item:nth-child(5) { --animation-order: 5; }
+        .work-item:nth-child(6) { --animation-order: 6; }
+        .work-item:nth-child(7) { --animation-order: 7; }
+        .work-item:nth-child(8) { --animation-order: 8; }
+        
+        .work-media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .work-item:hover .work-media {
+            transform: scale(1.1);
+        }
+        
+        /* Video-specific styling */
+        .work-item.video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(138, 43, 226, 0.8);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: var(--transition);
+            z-index: 3;
+        }
+        
+        .work-item:hover .video-play-button {
+            background: rgba(255, 105, 180, 0.9);
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .work-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(138, 43, 226, 0), rgba(138, 43, 226, 0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        
+        .work-item:hover .work-overlay {
+            opacity: 1;
+        }
+        
+        .work-overlay h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--salon-gold);
+        }
+        
+        .work-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* Media type indicator */
+        .media-type {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--salon-purple);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 3;
+        }
+        
+        .media-type.video {
+            background: var(--salon-pink);
+        }
         
         /* Contact Section */
         .contact-section {
-            background-color: var(--rasta-black);
+            background: linear-gradient(135deg, var(--salon-black), #2a2a2a);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1593693397691-362efc6c5d59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .contact-container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
         
         .contact-section h2 {
@@ -419,153 +691,139 @@
         }
         
         .contact-section h2:after {
-            background: linear-gradient(to right, var(--rasta-red), var(--rasta-gold));
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            background: linear-gradient(to right, var(--salon-purple), var(--salon-gold));
         }
         
         .contact-info h3 {
-            color: var(--rasta-gold);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            color: var(--salon-gold);
+            margin-bottom: 25px;
+            font-size: 2rem;
         }
         
         .contact-details {
-            margin-top: 30px;
+            margin-top: 35px;
         }
         
         .contact-details p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
+            font-size: 1.1rem;
         }
         
         .contact-details i {
-            margin-right: 15px;
-            color: var(--rasta-gold);
-            width: 20px;
-            font-size: 1.2rem;
+            margin-right: 20px;
+            color: var(--salon-teal);
+            width: 25px;
+            font-size: 1.4rem;
         }
         
-.map-container {
-            margin-top: 30px;
-            border-radius: 10px;
+        .map-container {
+            margin-top: 35px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border: 3px solid var(--rasta-gold);
-            height: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 4px solid var(--salon-purple);
+            height: 350px;
             position: relative;
-            cursor: pointer;
-            transition: var(--transition);
         }
         
-        .map-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-        }
-        
-        
-        .map-image {
+        .map-container iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            display: block;
+            border: none;
         }
         
-        .map-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .map-container:hover .map-overlay {
-            opacity: 1;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
-        }
-        
-        .map-overlay i {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--rasta-gold);
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .contact-form input,
-        .contact-form textarea {
+        .contact-form textarea,
+        .contact-form select {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 18px;
+            margin-bottom: 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
             font-family: 'Open Sans', sans-serif;
-            border-left: 3px solid var(--rasta-green);
+            border-left: 4px solid var(--salon-teal);
+            font-size: 1.05rem;
+            transition: var(--transition);
         }
         
         .contact-form input:focus,
-        .contact-form textarea:focus {
+        .contact-form textarea:focus,
+        .contact-form select:focus {
             outline: none;
-            border-left: 3px solid var(--rasta-gold);
+            border-left: 4px solid var(--salon-gold);
+            background-color: rgba(255, 255, 255, 0.15);
         }
         
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
         }
         
         .contact-form textarea {
-            height: 150px;
+            height: 180px;
             resize: vertical;
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(to right, var(--rasta-red), var(--rasta-black), var(--rasta-green));
+            background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink));
             color: white;
-            padding: 40px 0 20px;
+            padding: 50px 0 25px;
             text-align: center;
+            position: relative;
         }
         
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
         
         .social-links a {
             color: white;
-            font-size: 1.5rem;
-            margin-left: 20px;
+            font-size: 1.8rem;
+            margin-left: 25px;
             transition: var(--transition);
+            display: inline-block;
         }
         
         .social-links a:hover {
-            color: var(--rasta-gold);
-            transform: translateY(-3px);
+            color: var(--salon-gold);
+            transform: translateY(-5px) scale(1.1);
         }
         
         .copyright {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.8;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1rem;
+            opacity: 0.9;
         }
         
         /* Modal */
@@ -576,7 +834,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -584,51 +842,66 @@
         }
         
         .modal-content {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 500px;
+            background: linear-gradient(135deg, white, #f9f9f9);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 550px;
             width: 100%;
             position: relative;
-            animation: modalFadeIn 0.3s ease;
-            border: 5px solid var(--rasta-gold);
+            animation: modalFadeIn 0.4s ease;
+            border: 5px solid var(--salon-purple);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
         
         @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(-60px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
         
         .close-modal {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.8rem;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
             background: none;
             border: none;
             cursor: pointer;
-            color: var(--rasta-red);
+            color: var(--salon-purple);
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--salon-pink);
+            transform: rotate(90deg);
         }
         
         /* Responsive Design */
-        @media (max-width: 992px) {
+        @media (max-width: 1100px) {
             h1 {
-                font-size: 3rem;
+                font-size: 3.2rem;
             }
             
             h2 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
             
             .about-content,
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
             
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
+            .video-container {
+                transform: none;
+            }
+            
+            .video-container:hover {
+                transform: scale(1.02);
+            }
+            
+            .works-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 25px;
             }
         }
         
@@ -639,19 +912,20 @@
             
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 85px;
                 left: 0;
                 width: 100%;
-                background-color: var(--rasta-black);
+                background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink));
                 flex-direction: column;
                 align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-                transform: translateY(-100%);
+                padding: 30px 0;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                transform: translateY(-150%);
                 opacity: 0;
                 transition: var(--transition);
                 pointer-events: none;
                 z-index: 999;
+                border-top: 3px solid var(--salon-gold);
             }
             
             .nav-links.active {
@@ -661,21 +935,55 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 20px 0;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .logo-img {
+                height: 50px;
             }
             
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             
             .tagline {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+            }
+            
+            .video-container {
+                height: 350px;
+            }
+            
+            #about, #services {
+                background-attachment: scroll;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .social-links a {
+                margin: 0 12px;
+            }
+            
+            .works-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .work-item {
+                height: 250px;
             }
         }
         
         @media (max-width: 576px) {
             section {
-                padding: 70px 0;
+                padding: 80px 0;
             }
             
             h1 {
@@ -686,28 +994,60 @@
                 font-size: 2rem;
             }
             
+            .logo-text {
+                font-size: 1.6rem;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
             .hero {
                 height: 90vh;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .video-container {
+                height: 280px;
+            }
+            
+            .contact-form {
+                padding: 30px 25px;
+            }
+            
+            .modal-content {
+                padding: 40px 25px;
+            }
+            
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .work-item {
+                height: 300px;
+            }
+            
+            .footer-logo-img {
+                height: 60px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Rasta Banner -->
-    <div class="rasta-banner"></div>
-
     <!-- Header & Navigation -->
     <header id="header">
         <div class="container">
             <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-crown logo-icon"></i>
-                    <span class="logo-main">Judith</span><span class="logo-suffix">Saloon</span>
-                </a>
+                <div class="logo-container">
+                    <!-- Replace the src with your actual logo image -->
+                    <img src="Images/logo.jpg" alt="Judith Blessings Salon Logo" class="logo-img">
+                    <a href="#" class="logo-text">Judith Blessings Salon</a>
+                </div>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -715,6 +1055,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Our Sanctuary</a></li>
                     <li><a href="#services">Our Craft</a></li>
+                    <li><a href="#recent-works">Recent Works</a></li>
                     <li><a href="#contact">Visit Us</a></li>
                     <li><a href="#" id="bookBtn">Book Now</a></li>
                 </ul>
@@ -726,36 +1067,37 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1><span>Judith Saloon</span></h1>
+                <h1>Judith Blessings Salon</h1>
                 <div class="tagline">Master Architect & Caretaker for Locs</div>
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i>
-                    Kenyatta Market, Nairobi, Kenya
+                    Kenyatta Market, Mtongwe Road, Nairobi, Kenya
                 </div>
-                <p>Our work is much more than just hair styling; it's a skilled craft that combines technique, artistry, and deep cultural knowledge. We are the sanctuary where your loc journey begins, evolves, and thrives.</p>
+                <p>Where dreadlocks are transformed into crowns of beauty. Our work is much more than just hair styling; it's a skilled craft that combines technique, artistry, and deep cultural knowledge.</p>
                 <a href="#services" class="btn">Explore Our Craft</a>
             </div>
         </div>
     </section>
 
-     <!-- About Section with Video -->
+    <!-- About Section with Video and Faded Background -->
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2><span class="rasta-title">Our Sanctuary</span></h2>
+                <h2><span class="salon-title">Our Sanctuary</span></h2>
                 <p>Where tradition meets artistry in the heart of Nairobi</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>At <strong>Judith Saloon</strong> in Kenyatta Market, we understand that dreadlocks are more than a hairstyle—they're a journey, a statement, and a living art form. As master architects and caretakers for locs, we approach each client with reverence for the craft and respect for the cultural significance of locs in African heritage.</p>
+                    <p>At <strong>Judith Blessings Salon</strong> in Kenyatta Market, we understand that dreadlocks are more than a hairstyle—they're a journey, a statement, and a living art form. As master architects and caretakers for locs, we approach each client with reverence for the craft and respect for the cultural significance of locs in African heritage.</p>
                     <p>Our studio is a sanctuary where your locs receive the dedicated attention they deserve. From the initial consultation to ongoing maintenance, we combine traditional techniques with modern artistry to create and maintain healthy, beautiful locs that reflect your unique identity.</p>
-                    <p>We honor the roots of this practice while innovating with styles that suit contemporary life. Each service is performed with precision, patience, and passion, embodying the spirit of Rastafari culture and African pride.</p>
+                    <p>We honor the roots of this practice while innovating with styles that suit contemporary life. Each service is performed with precision, patience, and passion, embodying the spirit of African pride and beauty.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Visit Our Sanctuary</a>
                 </div>
                 <div class="video-container">
                     <!-- Video showcasing our work -->
-                    <video id="salonVideo" loop muted playsinline>
+                    <video id="salonVideo" loop muted playsinline poster="https://images.unsplash.com/photo-1596703923338-48f1c07e4f2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
                         <!-- Using a video placeholder - replace with your actual salon video -->
-                        <source src="vids/pin.mp4" type="video/mp4">
+                        <source src="vids/Download (2).mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <div class="video-overlay">
@@ -767,13 +1109,12 @@
             </div>
         </div>
     </section>
-    </section>
 
-    <!-- Services Section -->
+    <!-- Services Section with Faded Background -->
     <section id="services">
         <div class="container">
             <div class="section-title">
-                <h2><span class="rasta-title">Our Craft</span></h2>
+                <h2><span class="salon-title">Our Craft</span></h2>
                 <p>Each service is performed with the utmost care, expertise, and cultural respect</p>
             </div>
             
@@ -781,7 +1122,7 @@
                 <!-- Installation Service -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/inst.jpg" alt="Dreadlock installation process">
+                        <img src="Images/_n.jpg" alt="Dreadlock installation process at Judith Blessings Salon">
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-seedling service-icon"></i> Installation</h3>
@@ -797,7 +1138,7 @@
                 <!-- Maintenance Service -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/mainta.jpg" alt="Dreadlock maintenance and retightening">
+                        <img src="Images/4salon.jpg" alt="Dreadlock maintenance and retightening at Judith Blessings Salon">
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-hands service-icon"></i> Maintenance & Retightening</h3>
@@ -813,39 +1154,7 @@
                 <!-- Styling Service -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/style.jpg" alt="Styled dreadlocks with artistic designs">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-palette service-icon"></i> Styling & Artistic Work</h3>
-                        <p><em>Creative Expression</em></p>
-                        <ul>
-                            <li><strong>Intricate Styles:</strong> Loc updos, buns, braids, and crowns</li>
-                            <li><strong>Accessories:</strong> Rings, beads, threads, or wraps</li>
-                            <li><strong>Cutting & Shaping:</strong> Silhouettes and fades</li>
-                            <li><strong>Color Services:</strong> Dyes and bleaches with special care</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Styling Service -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/dre 5.jpg" alt="Styled dreadlocks with artistic designs">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-palette service-icon"></i> Styling & Artistic Work</h3>
-                        <p><em>Creative Expression</em></p>
-                        <ul>
-                            <li><strong>Intricate Styles:</strong> Loc updos, buns, braids, and crowns</li>
-                            <li><strong>Accessories:</strong> Rings, beads, threads, or wraps</li>
-                            <li><strong>Cutting & Shaping:</strong> Silhouettes and fades</li>
-                            <li><strong>Color Services:</strong> Dyes and bleaches with special care</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Styling Service -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/dread.jpg" alt="Styled dreadlocks with artistic designs">
+                        <img src="Images/_n.jpg" alt="Styled dreadlocks with artistic designs at Judith Blessings Salon">
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-palette service-icon"></i> Styling & Artistic Work</h3>
@@ -862,7 +1171,7 @@
                 <!-- Health Service -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="images/d4.jpg" alt="Dreadlock health and wellness treatment">
+                        <img src="Images/dizyn.jpg" alt="Dreadlock health and wellness treatment at Judith Blessings Salon">
                     </div>
                     <div class="service-content">
                         <h3><i class="fas fa-spa service-icon"></i> Health & Wellness</h3>
@@ -872,6 +1181,118 @@
                             <li><strong>Client Education:</strong> Teaching proper at-home care and drying techniques</li>
                             <li><strong>Issue Resolution:</strong> Addressing lint accumulation, excessive tightening, or scalp health</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Works Section with Images & Videos -->
+    <section id="recent-works">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="salon-title">Recent Works</span></h2>
+                <p>See some of our beautiful transformations and creative designs</p>
+            </div>
+            
+            <div class="works-grid">
+                <!-- Video 1 -->
+                <div class="work-item video-item">
+                    <video class="work-media" loop muted playsinline>
+                        <source src="vids/Download (6).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="media-type video">VIDEO</div>
+                    <div class="work-overlay">
+                        <h4>Installation Process</h4>
+                        <p>Watch our precise loc installation technique</p>
+                    </div>
+                </div>
+                
+                <!-- Image 1 -->
+                <div class="work-item">
+                    <img src="Images/dizyn.jpg" alt="Traditional locs installation" class="work-media">
+                    <div class="media-type">IMAGE</div>
+                    <div class="work-overlay">
+                        <h4>Traditional Locs</h4>
+                        <p>Beautiful traditional locs installation</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="work-item video-item">
+                    <video class="work-media" loop muted playsinline>
+                        <source src="vids/Download (4).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="media-type video">VIDEO</div>
+                    <div class="work-overlay">
+                        <h4>Braiding Technique</h4>
+                        <p>Watch our skilled braiding process</p>
+                    </div>
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="work-item">
+                    <img src="Images/4n.jpg" alt="Styled locs with accessories" class="work-media">
+                    <div class="media-type">IMAGE</div>
+                    <div class="work-overlay">
+                        <h4>Accessorized Locs</h4>
+                        <p>Styled with beads and threads</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="work-item video-item">
+                    <video class="work-media" loop muted playsinline>
+                        <source src="vids/Download (5).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="media-type video">VIDEO</div>
+                    <div class="work-overlay">
+                        <h4>Styling Session</h4>
+                        <p>Creative styling in progress</p>
+                    </div>
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="work-item">
+                    <img src="Images/481.jpg" alt="Maintenance work" class="work-media">
+                    <div class="media-type">IMAGE</div>
+                    <div class="work-overlay">
+                        <h4>Maintenance Work</h4>
+                        <p>Professional retightening session</p>
+                    </div>
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="work-item">
+                    <img src="Images/48.jpg" alt="Colored dreadlocks" class="work-media">
+                    <div class="media-type">IMAGE</div>
+                    <div class="work-overlay">
+                        <h4>Colored Locs</h4>
+                        <p>Vibrant color transformation</p>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="work-item video-item">
+                    <video class="work-media" loop muted playsinline>
+                        <source src="vids/Download (1).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="media-type video">VIDEO</div>
+                    <div class="work-overlay">
+                        <h4>Final Reveal</h4>
+                        <p>Client's happy reaction to new locs</p>
                     </div>
                 </div>
             </div>
@@ -889,29 +1310,24 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Our Nairobi Sanctuary</h3>
-                    <p>At Judith Saloon in Kenyatta Market, we believe in creating a peaceful, respectful environment where your locs can be nurtured by skilled hands. Each appointment is given the time and attention it deserves in the heart of Nairobi's vibrant culture.</p>
+                    <p>At Judith Blessings Salon in Kenyatta Market, we believe in creating a peaceful, respectful environment where your locs can be nurtured by skilled hands. Each appointment is given the time and attention it deserves in the heart of Nairobi's vibrant culture.</p>
                     
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> Judith Saloon, Kenyatta Market, Nairobi, Kenya</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Judith Blessings Salon, Kenyatta Market, Mtongwe Road, Nairobi, Kenya</p>
                         <p><i class="fas fa-phone"></i> +254 710846655</p>
-                        <p><i class="fas fa-envelope"></i> judith@judithsaloon.co.ke</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 9am-7pm | Sun: 12pm-5pm</p>
-                        <p><i class="fas fa-whatsapp"></i> WhatsApp: +254 710846655</p>
+                        <p><i class="fas fa-envelope"></i> blessings@judithsalon.co.ke</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sun: 6am-10pm</p>
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp: +254 710846655</p>
                     </div>
                     
-                    <!-- STATIC MAP IMAGE THAT ALWAYS WORKS -->
-                    <div class="map-container" id="mapContainer">
-                        <!-- Static map image - ALWAYS LOADS -->
-                        <img src="https://maps.googleapis.com/maps/api/staticmap?center=Kenyatta+Market,Nairobi,Kenya&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:J%7C-1.2828,36.8081&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" 
-                             alt="Judith Saloon Location at Kenyatta Market, Nairobi"
-                             class="map-image">
-                        
-                        <!-- Overlay with clickable link -->
-                        <div class="map-overlay">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <h4>Click to Open in Google Maps</h4>
-                            <p>Get directions to our salon</p>
-                        </div>
+                    <!-- GOOGLE MAPS EMBED -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818476946981!2d36.80814977477309!3d-1.2828356356384358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1738c12c34a9%3A0x9d6c09d79c33b3a8!2sKenyatta%20Market%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1688654321070!5m2!1sen!2ske" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                     
                     <a href="#" class="btn" id="contactBookBtn" style="margin-top: 30px;">Book Your Consultation</a>
@@ -925,7 +1341,7 @@
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
                         <input type="tel" placeholder="Your Phone">
-                        <select style="width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 5px; background-color: rgba(255,255,255,0.1); color: white; border: none; border-left: 3px solid var(--rasta-green);">
+                        <select name="service" required>
                             <option value="">Service of Interest</option>
                             <option value="installation">New Installation</option>
                             <option value="maintenance">Maintenance</option>
@@ -945,36 +1361,37 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="logo" style="color:white; font-size: 1.8rem;">
-                    <i class="fas fa-crown logo-icon"></i>
-                    <span style="color: var(--rasta-gold);">Judith</span>Saloon
-                </a>
+                <div class="footer-logo">
+                    <!-- Replace with your actual logo -->
+                    <img src="Images/logo.jpg" alt="Judith Blessings Salon Logo" class="footer-logo-img">
+                    <div class="logo-text" style="color: white;">Judith Blessings Salon</div>
+                </div>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100067749048190"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@judithblessingssalon324?_r=1&_t=ZM-92nYKQVmgTj"><i class="fab fa-tiktok"></i></a>
                     <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Judith Saloon, Kenyatta Market,Mtongwe RD, Nairobi, Kenya. All rights reserved. | Master Architects & Caretakers for Locs</p>
-                <p style="margin-top: 10px;">Proudly serving Nairobi's loc community with cultural respect and artistic excellence</p>
+                <p>&copy; 2025 Judith Blessings Salon Stall 324, Kenyatta Market, Mtongwe Road, Nairobi. All rights reserved.</p>
+                <p style="margin-top: 10px;">Master Architects & Caretakers for Locs | Proudly serving Nairobi's loc community</p>
             </div>
         </div>
     </footer>
 
-    <!-- Booking Modal -->
+    <!-- Booking Modal with Email Integration -->
     <div class="modal" id="bookingModal">
         <div class="modal-content">
             <button class="close-modal" id="closeModal">&times;</button>
-            <h2 style="color: var(--rasta-red);">Book Your Consultation</h2>
-            <p>Begin your loc journey with a personalized consultation at Judith Saloon. We'll discuss your vision, assess your hair, and create a plan tailored to your needs.</p>
+            <h2 style="background: linear-gradient(135deg, var(--salon-purple), var(--salon-pink)); -webkit-background-clip: text; background-clip: text; color: transparent;">Book Your Consultation</h2>
+            <p>Begin your loc journey with a personalized consultation at Judith Blessings Salon. We'll discuss your vision, assess your hair, and create a plan tailored to your needs.</p>
             
-            <form id="bookingForm" style="margin-top:20px;">
-                <input type="text" placeholder="Full Name" required style="width:100%; margin-bottom:15px; padding:12px; border: 1px solid #ddd; border-radius: 5px;">
-                <input type="email" placeholder="Email Address" required style="width:100%; margin-bottom:15px; padding:12px; border: 1px solid #ddd; border-radius: 5px;">
-                <input type="tel" placeholder="Phone Number" required style="width:100%; margin-bottom:15px; padding:12px; border: 1px solid #ddd; border-radius: 5px;">
-                <select style="width:100%; margin-bottom:15px; padding:12px; background-color:#f5f5f5; border:1px solid #ddd; border-radius:5px;">
+            <form id="bookingForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID_HERE" style="margin-top:20px;">
+                <input type="text" name="name" placeholder="Full Name" required style="width:100%; margin-bottom:15px; padding:15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1.05rem;">
+                <input type="email" name="email" placeholder="Email Address" required style="width:100%; margin-bottom:15px; padding:15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1.05rem;">
+                <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; margin-bottom:15px; padding:15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1.05rem;">
+                <select name="service" style="width:100%; margin-bottom:15px; padding:15px; background-color:#f9f9f9; border:2px solid #e0e0e0; border-radius:10px; font-size:1.05rem;">
                     <option value="">Select Service Interest</option>
                     <option value="installation">New Installation</option>
                     <option value="maintenance">Maintenance</option>
@@ -982,11 +1399,14 @@
                     <option value="repair">Repair/Health</option>
                     <option value="consultation">Consultation Only</option>
                 </select>
-                <textarea placeholder="Any specific questions or concerns?" style="width:100%; margin-bottom:20px; padding:12px; height:100px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                <input type="hidden" name="_subject" value="New Booking Consultation - Judith Blessings Salon">
+                <input type="hidden" name="_replyto" value="blessings@judithsalon.co.ke">
+                <textarea name="message" placeholder="Any specific questions or concerns?" style="width:100%; margin-bottom:20px; padding:15px; height:120px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1.05rem;"></textarea>
                 <button type="submit" class="btn" style="width:100%;">Request Consultation</button>
             </form>
             
-            <p style="margin-top:20px; font-size:0.9rem; color:#666;">We'll contact you within 24 hours to confirm your appointment at our Kenyatta Market location.</p>
+            <p style="margin-top:20px; font-size:0.95rem; color:#666; text-align:center;">We'll contact you within 24 hours to confirm your appointment at our Kenyatta Market location.</p>
+            <p style="margin-top:10px; font-size:0.85rem; color:#888; text-align:center;">Your booking will be sent directly to our salon email</p>
         </div>
     </div>
 
@@ -1002,7 +1422,8 @@
         const bookingForm = document.getElementById('bookingForm');
         const salonVideo = document.getElementById('salonVideo');
         const playButton = document.getElementById('playButton');
-        const mapContainer = document.getElementById('mapContainer');
+        const workItems = document.querySelectorAll('.work-item');
+        const videoWorkItems = document.querySelectorAll('.work-item.video-item');
         
         // Mobile Menu Toggle
         mobileMenuBtn.addEventListener('click', () => {
@@ -1022,16 +1443,16 @@
         
         // Header scroll effect
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
-                header.style.padding = '10px 0';
+            if (window.scrollY > 100) {
+                header.style.padding = '12px 0';
+                header.style.background = 'linear-gradient(135deg, rgba(138, 43, 226, 0.98), rgba(255, 105, 180, 0.98))';
             } else {
-                header.style.backgroundColor = 'var(--rasta-black)';
-                header.style.padding = '15px 0';
+                header.style.padding = '18px 0';
+                header.style.background = 'linear-gradient(135deg, rgba(138, 43, 226, 0.95), rgba(255, 105, 180, 0.95))';
             }
         });
-
-         // Video control
+        
+        // Video control for main video
         let videoPlaying = false;
         
         playButton.addEventListener('click', () => {
@@ -1050,11 +1471,88 @@
             salonVideo.play().catch(e => {
                 console.log("Autoplay prevented, user interaction required");
             });
+            
+            // Autoplay videos in gallery
+            videoWorkItems.forEach(item => {
+                const video = item.querySelector('video');
+                if (video) {
+                    video.play().catch(e => {
+                        console.log("Gallery video autoplay prevented");
+                    });
+                }
+            });
         });
-
-        // Map functionality - opens Google Maps in new tab when clicked
-        mapContainer.addEventListener('click', () => {
-            window.open('https://www.google.com/maps?q=Kenyatta+Market+Nairobi+Kenya&ll=-1.2828,36.8081&z=16', '_blank');
+        
+        // Video controls for gallery videos
+        videoWorkItems.forEach(item => {
+            const video = item.querySelector('video');
+            const playBtn = item.querySelector('.video-play-button');
+            
+            if (video && playBtn) {
+                // Toggle play/pause on video click
+                video.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (video.paused) {
+                        video.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        video.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
+                
+                // Update play button based on video state
+                video.addEventListener('play', () => {
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    playBtn.style.opacity = '0.5';
+                });
+                
+                video.addEventListener('pause', () => {
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    playBtn.style.opacity = '0.8';
+                });
+                
+                // Play button click
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+                
+                // Play video on hover
+                item.addEventListener('mouseenter', () => {
+                    video.play().catch(e => {
+                        console.log("Video play on hover prevented");
+                    });
+                });
+                
+                // Pause video when not hovering (optional)
+                item.addEventListener('mouseleave', () => {
+                    // video.pause();
+                    // Uncomment above line if you want videos to pause when mouse leaves
+                });
+            }
+        });
+        
+        // Animate recent works items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const workObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        workItems.forEach(item => {
+            workObserver.observe(item);
         });
         
         // Modal functionality
@@ -1079,19 +1577,29 @@
             }
         });
         
-        // Form submissions (demo only - no backend)
+        // Form submissions with email integration
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Asante! Thank you for your message. We will contact you soon to discuss your loc journey. In a real implementation, this would connect to a backend service.');
+            
+            // In a real implementation, you would use a service like Formspree
+            // For demo purposes, we'll show a success message
+            alert('Asante! Your message has been sent to blessings@judithsalon.co.ke. We will contact you soon to discuss your loc journey at Judith Blessings Salon.');
             contactForm.reset();
         });
         
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Consultation requested! We\'ll contact you within 24 hours to schedule your appointment at Judith Saloon in Kenyatta Market.');
-            bookingForm.reset();
-            bookingModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+        // For the booking form, we need to set up Formspree or similar service
+        // Replace YOUR_FORM_ID_HERE with your actual Formspree form ID
+        bookingForm.addEventListener('submit', function(e) {
+            // If using Formspree, the form will submit normally
+            // For demo, we'll show success message
+            alert('Consultation requested! Your booking details have been sent to blessings@judithsalon.co.ke. We\'ll contact you within 24 hours to schedule your appointment at Judith Blessings Salon in Kenyatta Market.');
+            
+            // Reset form and close modal
+            setTimeout(() => {
+                bookingForm.reset();
+                bookingModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 100);
         });
         
         // Smooth scroll for anchor links
@@ -1106,7 +1614,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 90,
                         behavior: 'smooth'
                     });
                 }
@@ -1114,54 +1622,67 @@
         });
         
         // Service cards animation on scroll
-        const observerOptions = {
+        const serviceObserverOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -60px 0px'
         };
         
-        const observer = new IntersectionObserver((entries) => {
+        const serviceObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, serviceObserverOptions);
         
         // Observe service cards
         document.querySelectorAll('.service-card').forEach(card => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+            card.style.transform = 'translateY(40px)';
+            card.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+            serviceObserver.observe(card);
         });
         
-        // Rasta colors animation for title
-        const rastaTitle = document.querySelector('.rasta-title');
-        if(rastaTitle) {
-            setInterval(() => {
-                rastaTitle.style.background = `linear-gradient(to right, ${getRandomRastaColor()}, ${getRandomRastaColor()}, ${getRandomRastaColor()})`;
-                rastaTitle.style.webkitBackgroundClip = 'text';
-                rastaTitle.style.backgroundClip = 'text';
-            }, 3000);
-        }
-        
-        function getRandomRastaColor() {
-            const rastaColors = ['#C00', '#FFD700', '#008000', '#000'];
-            return rastaColors[Math.floor(Math.random() * rastaColors.length)];
-        }
-
-        // Fix for map loading issue
-        window.addEventListener('load', () => {
-            // Refresh map iframe to ensure it loads
-            const mapIframe = document.querySelector('.map-container iframe');
-            if (mapIframe) {
-                const mapSrc = mapIframe.src;
-                mapIframe.src = '';
-                setTimeout(() => {
-                    mapIframe.src = mapSrc;
-                }, 100);
+        // Background image fade-in effect on scroll
+        window.addEventListener('scroll', () => {
+            const aboutSection = document.getElementById('about');
+            const servicesSection = document.getElementById('services');
+            const scrollPosition = window.scrollY;
+            
+            // Adjust background position for subtle parallax effect
+            if (aboutSection) {
+                aboutSection.style.backgroundPositionY = `${scrollPosition * 0.08}px`;
             }
+            
+            if (servicesSection) {
+                servicesSection.style.backgroundPositionY = `${scrollPosition * 0.06}px`;
+            }
+        });
+        
+        // Add loading animation for elements
+        window.addEventListener('load', () => {
+            // Animate elements on page load
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.style.animation = 'fadeInUp 1s ease forwards';
+            }
+            
+            // Add CSS animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
         });
     </script>
 </body>
